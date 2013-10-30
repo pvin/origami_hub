@@ -26,6 +26,7 @@ Tabulous.setup do
         [ :origamis_tab, 'Origamis', origamis_path, true, true ],
     ]
   end
+
   customize do
 
 
