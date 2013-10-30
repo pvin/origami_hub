@@ -20,12 +20,6 @@ Tabulous.setup do
 
   end
 
-  config.tabs do
-    [
-        [ :welcome_tab,  'Welcome',  root_path,     true, true ],
-        [ :origamis_tab, 'Origamis', origamis_path, true, true ],
-    ]
-  end
 
   customize do
 
