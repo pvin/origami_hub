@@ -1,25 +1,10 @@
-<%= form_for(@origami) do |f| %>
-  <% if @origami.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@origami.errors.count, "error") %> prohibited this origami from being saved:</h2>
-
-      <ul>
-      <% @origami.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
-  </div>
-  <div class="field">
-    <%= f.label :artist %><br />
-    <%= f.text_field :artist %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+<%= semantic_form_for @origami do |f| %>
+    <%= f.semantic_errors %>
+    <%= f.inputs do %>
+        <%= f.input :name,   :hint => "Enter the origami artwork's name" %>
+        <%= f.input :artist, :hint => "Enter the origami artist's name" %>
+    <% end %>
+    <%= f.buttons do %>
+        <%= f.commit_button :button_html => {:class => "primary"} %>
+    <% end %>
 <% end %>
